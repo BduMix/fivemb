@@ -19,4 +19,5 @@ int main() {
         std::cout << "Factorial of " << num << " is: " << result << std::endl;
     }
     return 0;
+
 }
