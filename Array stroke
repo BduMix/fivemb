@@ -1,0 +1,49 @@
+// Define an array to store tasks
+let tasks = [];
+
+// Function to add a new task
+function addTask(taskDescription) {
+    tasks.push({ description: taskDescription, completed: false });
+}
+
+// Function to mark a task as completed
+function completeTask(taskIndex) {
+    if (taskIndex >= 0 && taskIndex < tasks.length) {
+        tasks[taskIndex].completed = true;
+    } else {
+        console.log("Invalid task index");
+    }
+}
+
+// Function to remove a task
+function removeTask(taskIndex) {
+    if (taskIndex >= 0 && taskIndex < tasks.length) {
+        tasks.splice(taskIndex, 1);
+    } else {
+        console.log("Invalid task index");
+    }
+}
+
+// Function to display all tasks
+function displayTasks() {
+    console.log("Tasks:");
+    tasks.forEach((task, index) => {
+        console.log(`${index + 1}. [${task.completed ? "X" : " "}] ${task.description}`);
+    });
+}
+
+// Test the functions
+addTask("Buy groceries");
+addTask("Finish homework");
+addTask("Call mom");
+
+console.log("Initial tasks:");
+displayTasks();
+
+completeTask(1); // Mark "Finish homework" as completed
+console.log("\nAfter completing task:");
+displayTasks();
+
+removeTask(0); // Remove "Buy groceries"
+console.log("\nAfter removing task:");
+displayTasks();
